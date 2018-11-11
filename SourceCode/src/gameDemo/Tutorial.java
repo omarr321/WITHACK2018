@@ -12,11 +12,11 @@ public class Tutorial {
 
 		while (items[3] == false) {
 			for (int i = 0; i < items.length; i++) {
-				items[i] = true;
+				items[i] = false;
 			}
-			//tutorialShack(input, items);
-			//village(input, items);
-			//bossHouse(input, items);
+			tutorialShack(input, items);
+			village(input, items);
+			bossHouse(input, items);
 			bossFight(input, items);
 		}
 		input.close();
