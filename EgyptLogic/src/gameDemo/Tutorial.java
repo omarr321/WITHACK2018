@@ -7,13 +7,13 @@ public class Tutorial {
 		Scanner input = new Scanner(System.in);
 		clearScreen();
 		boolean[] items = new boolean[4];
-		for (int i = 0; i < items.length; i++) {
-			items[i] = false;
-		}
 		items[3] = false;
 		Spash.start(input);
 
 		while (items[3] == false) {
+			for (int i = 0; i < items.length; i++) {
+				items[i] = false;
+			}
 			tutorialShack(input, items);
 			village(input, items);
 			bossHouse(input, items);
@@ -722,6 +722,8 @@ public class Tutorial {
 					System.out.println();
 					slowText("You take a final hit landing on the ground, weak. You try to get up but can't.");
 					slowText("You look up at the red beam one more time and die.");
+					sleep(3);
+					clearScreen();
 					return;
 				}
 			}
