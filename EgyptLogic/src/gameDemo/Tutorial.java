@@ -42,6 +42,8 @@ public class Tutorial {
 			String in = input.nextLine();
 			in = in.toLowerCase();
 
+			clearScreen();
+			
 			if (in.equals("leave")) {
 				slowText("The door moves to the side with an eery creek. Wherever you are, it looks deserted!");
 				sleep(2);
@@ -80,6 +82,9 @@ public class Tutorial {
 			// to make sure any random capitalizations still work but making everything
 			// lowercase and only looking for lowercase
 			action = action.toLowerCase();
+			
+			clearScreen();
+			
 			if (action.equals("look around the houses")) {
 				slowText("You ignore you desire to go towards the light and move toward the houses");
 				int[] house = { 1, 1, 1 };
@@ -132,6 +137,9 @@ public class Tutorial {
 			// gives user the options to chose
 			String choice = s.nextLine();
 			choice = choice.toLowerCase();
+			
+			clearScreen();
+			
 			// first house
 			if (choice.equals("house 1")) {
 				if (choice1 == true) {
@@ -154,6 +162,8 @@ public class Tutorial {
 							String newChoice = s.nextLine();
 							newChoice = newChoice.toLowerCase();
 
+							clearScreen();
+							
 							if (newChoice.equals("look inside the cabinet")) {
 								slowText(
 										"You peer into the cabinet and see an object. A single doll. One that is strangely familiar.");
@@ -167,6 +177,8 @@ public class Tutorial {
 									newChoice = s.nextLine();
 									newChoice = newChoice.toLowerCase();
 
+									clearScreen();
+									
 									if (newChoice.equals("remember")) {
 										slowText("Within your mind a memory suddenly bursts forth");
 										slowText(
@@ -217,6 +229,9 @@ public class Tutorial {
 						// what the user chooses as an
 						String anotherChoice = s.nextLine();
 						anotherChoice = anotherChoice.toLowerCase();
+						
+						clearScreen();
+						
 						// looks inside the cabinate
 						if (anotherChoice.equals("inspect object")) {
 							slowText("On the rug, there is a single piece of paper.");
@@ -228,6 +243,8 @@ public class Tutorial {
 								anotherChoice = s.nextLine();
 								anotherChoice = anotherChoice.toLowerCase();
 
+								clearScreen();
+								
 								// checks and makes sure all of the possible options are done. Will continue
 								// until a valid choice and path is done with a return
 
@@ -276,6 +293,9 @@ public class Tutorial {
 						slowTextN(">");
 						String anotherChoice = s.nextLine();
 						anotherChoice = anotherChoice.toLowerCase();
+						
+						clearScreen();
+						
 						if (anotherChoice.equals("run")) {
 							slowText(
 									"You leave the house and once you do a shadowy hand burst forth from the ground crushing");
@@ -325,6 +345,9 @@ public class Tutorial {
 								slowTextN(">");
 								anotherChoice = s.nextLine();
 								anotherChoice = anotherChoice.toLowerCase();
+								
+								clearScreen();
+								
 								switch (anotherChoice) {
 								case "read letter":
 									slowText("You read the letter, or whats left of it at least:");
@@ -383,6 +406,8 @@ public class Tutorial {
 			in = input.nextLine();
 			in = in.toLowerCase();
 
+			clearScreen();
+			
 			if (in.equals("look around")) {
 				slowText(
 						"You look around and notice the building is in better shape then the others and it seem out of place. There");
@@ -438,6 +463,9 @@ public class Tutorial {
 			}
 			in = input.nextLine();
 			in = in.toLowerCase();
+			
+			clearScreen();
+			
 			System.out.println();
 			switch (in) {
 			case "look around":
@@ -506,6 +534,8 @@ public class Tutorial {
 				in = input.nextLine();
 				in = in.toLowerCase();
 
+				clearScreen();
+				
 				if (in.equals("yes")) {
 					didLeave = true;
 					break;
@@ -580,13 +610,16 @@ public class Tutorial {
 				slowTextN(">");
 				String action = s.nextLine();
 				action = action.toLowerCase();
+				
+				clearScreen();
+				
 				System.out.println();
 
 				if (action.equals("fight")) {
 					
 					//Player Damage
 					
-					int damage = random(999, 999);
+					int damage = random(50, 200);
 					if (items[2] == true) {
 						damage = damage * 2;
 					}
