@@ -12,11 +12,11 @@ public class Tutorial {
 
 		while (items[3] == false) {
 			for (int i = 0; i < items.length; i++) {
-				items[i] = false;
+				items[i] = true;
 			}
-			tutorialShack(input, items);
-			village(input, items);
-			bossHouse(input, items);
+			//tutorialShack(input, items);
+			//village(input, items);
+			//bossHouse(input, items);
 			bossFight(input, items);
 		}
 		input.close();
@@ -336,34 +336,43 @@ public class Tutorial {
 								slowText(
 										"You unlock the trap door with your key you found and you go down. The room is almost");
 								slowText("in pristine condition. You see a desk with a letter on it.");
-								slowText("What do you want to do.");
-								if (read == false) {
-									slowText("(read letter, [locked])");
-								} else {
-									slowText("(read letter, search desk)");
-								}
-								slowTextN(">");
-								anotherChoice = s.nextLine();
-								anotherChoice = anotherChoice.toLowerCase();
-								
-								clearScreen();
-								
-								switch (anotherChoice) {
-								case "read letter":
-									slowText("You read the letter, or whats left of it at least:");
-									slowText("To ... powerful amulet ... you need it ... in desk");
-									slowText("That is all you can make out.");
-									read = true;
-									break;
-								case "search desk":
-									slowText(
-											"You search the desk and find the amulet of health. This amulet will give you");
-									slowText("plus 200% health.");
-									slowText("you put on the amulet and go back");
-									items[1] = true;
-									break;
-								default:
-									slowText("Not a vaild input!");
+								while (true) {
+									boolean leave = false;
+									slowText("What do you want to do.");
+									if (read == false) {
+										slowText("(read letter, [locked], leave)");
+									} else {
+										slowText("(read letter, search desk, leave)");
+									}
+									slowTextN(">");
+									anotherChoice = s.nextLine();
+									anotherChoice = anotherChoice.toLowerCase();
+
+									clearScreen();
+
+									switch (anotherChoice) {
+									case "read letter":
+										slowText("You read the letter, or whats left of it at least:");
+										slowText("To ... powerful amulet ... you need it ... in desk");
+										slowText("That is all you can make out.");
+										read = true;
+										break;
+									case "search desk":
+										slowText(
+												"You search the desk and find the amulet of health. This amulet will give you");
+										slowText("plus 200% health.");
+										slowText("you put on the amulet and go back");
+										items[1] = true;
+										break;
+									case "leave":
+										leave = true;
+										break;
+									default:
+										slowText("Not a vaild input!");
+									}
+									if (leave == true) {
+										break;
+									}
 								}
 							}
 						} else {
@@ -586,7 +595,9 @@ public class Tutorial {
 			while (true) {
 				bossHeal = Integer.toString(bossHealth);
 				playerHeal = Integer.toString(playerHealth);
-				System.out.println();
+				
+				clearScreen();
+				
 				slowText("Shub-Niggurath");
 				slowText("He who guards the gate.");
 				slowTextN(bossHeal);
@@ -701,6 +712,7 @@ public class Tutorial {
 					slowTextN(dam);
 					slowText(" damage!");
 					System.out.println();
+					break;
 				} else {
 					slowText("Not a valid input!");
 					sleep(2);

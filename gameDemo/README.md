@@ -1,0 +1,1 @@
+This is the exe of my game, just run the .bat file and you can play it. I update to game every once in a while.
