@@ -690,6 +690,17 @@ public class Tutorial {
 					System.out.println();
 					slowText("You go back to sleep.");
 					sleep(2);
+				} else if (action.equals("dev sword")) {
+					int damage = random(9999, 9999);
+					String dam = "";
+
+					dam = Integer.toString(damage);
+					bossHealth -= damage;
+					
+					slowTextN("You dealt ");
+					slowTextN(dam);
+					slowText(" damage!");
+					System.out.println();
 				} else {
 					slowText("Not a valid input!");
 					sleep(2);
